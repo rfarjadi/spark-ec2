@@ -16,7 +16,8 @@ fi
 
 SHORT_HOSTNAME=`hostname`
 
-PRIVATE_IP=`wget -q -O - http://169.254.169.254/latest/meta-data/local-ipv4`
+# PRIVATE_IP=`wget -q -O - http://169.254.169.254/latest/meta-data/local-ipv4`
+PRIVATE_IP=`cat ~/local-v4addr.txt`
 
 # do changes only if short hostname does not resolve
 ping -c 1 -q "${SHORT_HOSTNAME}" > /dev/null 2>&1
